@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+canvas {
+  width: 360px;
+  height: 360px;
+  background-color: black;
+  image-rendering: pixelated;
+}
+.btngroup {
+  display: flex;
+  width: 7.5em;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.btngroup button {
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  line-height: 3;
+}
+.btngroup button:nth-of-type(1) {
+  margin: 0 3em;
+}
+.btngroup button:nth-of-type(2) {
+  margin-right: 3em;
+}
