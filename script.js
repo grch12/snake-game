@@ -1,3 +1,4 @@
+"use strict";
 const canvas = document.querySelector("canvas");
 const ctx =  canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
@@ -88,4 +89,4 @@ const buttonIds = ["Up", "Down", "Left", "Right"];
 buttonIds.forEach((e) => {
   const element = document.querySelector("#" + e);
   element.addEventListener("click", window["go" + e]);
-})
+});
