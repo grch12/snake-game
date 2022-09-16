@@ -90,3 +90,24 @@ buttonIds.forEach((e) => {
   const element = document.querySelector("#" + e);
   element.addEventListener("click", window["go" + e]);
 });
+
+document.addEventListener("keyup", (e) => {
+  switch(e.key) {
+    case "ArrowDown": {
+      goDown();
+      break;
+    }
+    case "ArrowUp": {
+      goUp();
+      break;
+    }
+    case "ArrowLeft": {
+      goLeft();
+      break;
+    }
+    case "ArrowRight": {
+      goRight();
+      break;
+    }
+  }
+})
