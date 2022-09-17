@@ -59,17 +59,23 @@ function drawFood() {
 function detectEat() {
   let nextX = snakeBody[0][0] + dx;
   let nextY = snakeBody[0][1] + dy;
+  let changed = false;
   foods = foods.filter((e) => {
     if(e[0] === nextX && e[1] === nextY) {
       snakeBody = [e].concat(snakeBody);
-      ctx.clearRect(0, 0, 30, 30);
-      drawSnake();
-      drawFood();
+      changed = true;
       return false;
     } else {
       return true;
     }
   });
+  if(changed) {
+    setTimeout(() => {
+      ctx.clearRect(0, 0, 30, 30);
+      drawSnake();
+      drawFood();
+    }, 200);
+  }
 }
 
 drawSnake();
