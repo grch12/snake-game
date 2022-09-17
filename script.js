@@ -74,6 +74,7 @@ function detectEat() {
       ctx.clearRect(0, 0, 30, 30);
       drawSnake();
       drawFood();
+      detectEat();
     }, 200);
   }
 }
