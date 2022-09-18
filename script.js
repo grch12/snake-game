@@ -2,7 +2,6 @@
 const canvas = document.querySelector("canvas");
 const ctx =  canvas.getContext("2d");
 ctx.imageSmoothingEnabled = false;
-ctx.fillStyle = "green";
 
 let dx = 0;
 let dy = -1;
