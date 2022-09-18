@@ -11,6 +11,8 @@ let snakeBody = [[19, 21], [20, 21], [21, 21], [22, 21], [23, 21], [24, 21]];
 
 let foods = [];
 
+let shouldMove = true;
+
 function drawDot(x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, 1, 1);
@@ -70,26 +72,31 @@ function detectEat() {
     }
   });
   if(changed) {
+    shouldMove = false;
     setTimeout(() => {
       ctx.clearRect(0, 0, 30, 30);
       drawSnake();
       drawFood();
       detectEat();
     }, 200);
+  } else {
+    shouldMove = true;
   }
 }
 
 drawSnake();
 
 setInterval(() => {
-  if (Math.floor(Math.random() * 100) % 20 === 1) {
-    makeFood();
+  if(shouldMove) {
+    if (Math.floor(Math.random() * 100) % 20 === 1) {
+      makeFood();
+    }
+    moveSnake();
+    ctx.clearRect(0, 0, 30, 30);
+    drawSnake();
+    drawFood();
+    detectEat();
   }
-  moveSnake();
-  ctx.clearRect(0, 0, 30, 30);
-  drawSnake();
-  drawFood();
-  detectEat();
 }, 500);
 
 const buttonIds = ["Up", "Down", "Left", "Right"];
