@@ -6,6 +6,7 @@ body {
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 canvas {
   width: 360px;
@@ -15,16 +16,19 @@ canvas {
 }
 .btngroup {
   display: flex;
-  width: 7.5em;
+  width: 9em;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 .btngroup button {
   width: 3em;
   height: 3em;
   text-align: center;
   line-height: 3;
+  font-weight: bold;
+  box-sizing: border-box;
 }
 .btngroup button:nth-of-type(1) {
   margin: 0 3em;
